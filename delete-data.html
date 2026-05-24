@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excluir Dados — Orbiby</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:     #2E9AAF;
+      --teal-dim: rgba(46,154,175,0.12);
+      --bg:       #0D1A1C;
+      --bg2:      #112225;
+      --bg3:      #1A3035;
+      --text:     #E8E8F0;
+      --text2:    #8888A0;
+      --border:   rgba(46,154,175,0.2);
+      --red:      #FF6B6B;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 560px;
+      width: 100%;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo span {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .icon-wrap {
+      width: 56px;
+      height: 56px;
+      background: rgba(46,154,175,0.1);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text2);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .data-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .data-item {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.875rem 1rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    .data-item span { font-size: 1rem; }
+
+    .steps {
+      background: var(--bg3);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .steps h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .step {
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+      margin-bottom: 0.875rem;
+    }
+
+    .step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      background: var(--teal-dim);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--teal);
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .step p { margin: 0; font-size: 0.9rem; }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .email-block {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      background: var(--teal-dim);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .email-block span { font-size: 1.25rem; }
+    .email-block small {
+      display: block;
+      color: var(--text2);
+      font-size: 0.78rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .email-block a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .email-block a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <span>orbiby.com</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">🔒</div>
+      <h1>Excluir meus dados</h1>
+      <p>Você tem o direito de solicitar a exclusão de dados específicos da sua conta, sem precisar excluir a conta completa. Respeitamos sua privacidade e processamos todas as solicitações com agilidade.</p>
+
+      <p style="margin-bottom: 0.5rem; color: var(--text); font-size: 0.85rem; font-weight: 500;">Dados que podem ser excluídos:</p>
+      <div class="data-types">
+        <div class="data-item"><span>💬</span> Histórico de conversas</div>
+        <div class="data-item"><span>👤</span> Perfil pessoal</div>
+        <div class="data-item"><span>🤖</span> Config. do assistente</div>
+        <div class="data-item"><span>📅</span> Eventos da agenda</div>
+        <div class="data-item"><span>📊</span> Dados de uso</div>
+        <div class="data-item"><span>🎵</span> Integrações salvas</div>
+      </div>
+
+      <div class="steps">
+        <h3>Como solicitar</h3>
+        <div class="step">
+          <div class="step-num">1</div>
+          <p>Envie um e-mail com o assunto <strong>"Excluir meus dados"</strong></p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p>Informe o e-mail da sua conta e <strong>quais dados</strong> deseja excluir</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <p>Processaremos em até <strong>7 dias úteis</strong> e confirmaremos por e-mail</p>
+        </div>
+      </div>
+
+      <div class="email-block">
+        <span>✉️</span>
+        <div>
+          <small>Envie sua solicitação para</small>
+          <a href="mailto:contato@orbiby.com?subject=Excluir%20meus%20dados">contato@orbiby.com</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p style="margin: 0; font-size: 0.85rem;">Caso queira excluir sua conta completamente, acesse a <a href="https://orbiby.com/delete-account" style="color: var(--teal);">página de exclusão de conta</a>.</p>
+    </div>
+
+    <footer>
+      <a href="https://orbiby.com">← Voltar para orbiby.com</a> &nbsp;·&nbsp;
+      <a href="https://orbiby.com/privacy">Política de Privacidade</a>
+    </footer>
+  </div>
+</body>
+</html>
